@@ -6,7 +6,6 @@ const itemTypeButtons = document.getElementById('itemTypeButtons');
 const resultsContainer = document.getElementById('resultsContainer');
 
 // 자바의 컬렉션(Map, List) 개념을 적용한 전체 아이템 데이터
-// 각 아이템은 객체 형태로 id, name, description을 가집니다.
 const allItems = {
     'type1': [
         { id: 1, name: '아이템 타입 1-1', description: '아이템 타입 1-1에 대한 설명입니다.' },
@@ -119,6 +118,12 @@ searchButton.addEventListener('click', () => {
                 const itemCard = document.createElement('div');
                 itemCard.classList.add('item-card');
                 itemCard.textContent = item.name;
+                
+                // 아이템 카드를 클릭하면 설명이 표시되도록 이벤트 추가
+                itemCard.addEventListener('click', () => {
+                    searchResultDisplay.textContent = item.description;
+                });
+                
                 resultsContainer.appendChild(itemCard);
             });
         } else {
@@ -143,6 +148,12 @@ itemTypeButtons.addEventListener('click', (event) => {
             const itemCard = document.createElement('div');
             itemCard.classList.add('item-card');
             itemCard.textContent = item.name;
+
+            // 아이템 카드를 클릭하면 설명이 표시되도록 이벤트 추가
+            itemCard.addEventListener('click', () => {
+                searchResultDisplay.textContent = item.description;
+            });
+            
             resultsContainer.appendChild(itemCard);
         });
     }
