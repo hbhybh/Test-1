@@ -1,7 +1,7 @@
 // HTML 요소들을 변수로 가져옵니다.
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
-const siteTitle = document.getElementById('site-title');
+const searchResultDisplay = document.getElementById('searchResultDisplay'); // 새로 추가된 요소
 const itemTypeButtons = document.getElementById('itemTypeButtons');
 const resultsContainer = document.getElementById('resultsContainer');
 
@@ -17,8 +17,8 @@ const allItems = {
 searchButton.addEventListener('click', () => {
     const searchTerm = searchInput.value;
     if (searchTerm) {
-        siteTitle.textContent = searchTerm; // 제목을 검색어로 변경
-        alert(`"${searchTerm}"(으)로 검색`); // 검색 기능은 아직 없으므로 알림으로 대체
+        searchResultDisplay.textContent = searchTerm; // 빈 공간에 검색어를 표시
+        // 여기에 실제 검색 로직을 추가할 수 있습니다.
     }
 });
 
