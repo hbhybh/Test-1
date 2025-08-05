@@ -10,7 +10,17 @@
         .search-box { display: flex; }
         .search-box input[type="text"] { border: 1px solid #ccc; padding: 5px; }
         .search-box button { background-color: #333; color: white; border: none; padding: 5px 10px; cursor: pointer; }
-        .search-result-display { margin: 20px 0; padding: 20px; border: 1px dashed #999; text-align: center; font-size: 1.5em; min-height: 50px; }
+        
+        /* 이 부분을 수정했습니다. */
+        .search-result-display { 
+            margin: 20px 0; 
+            padding: 50px; /* padding 값을 늘려 빈 공간의 높이를 키웁니다. */
+            border: 1px dashed #999; 
+            text-align: center; 
+            font-size: 1.5em; 
+            min-height: 100px; /* 최소 높이를 설정하여 항상 공간이 확보되게 합니다. */
+        }
+        
         .item-types { display: flex; margin-top: 20px; }
         .item-types button { flex: 1; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0; cursor: pointer; }
         .results-container { margin-top: 20px; border: 1px solid #ccc; padding: 10px; min-height: 200px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
@@ -28,8 +38,7 @@
     </div>
 
     <div id="searchResultDisplay" class="search-result-display">
-        여기에 검색 결과가 표시됩니다.
-    </div>
+        </div>
 
     <div class="item-types" id="itemTypeButtons">
         <button data-type="type1">아이템 타입 1</button>
