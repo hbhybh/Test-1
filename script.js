@@ -1,0 +1,43 @@
+// HTML 요소들을 변수로 가져옵니다.
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const siteTitle = document.getElementById('site-title');
+const itemTypeButtons = document.getElementById('itemTypeButtons');
+const resultsContainer = document.getElementById('resultsContainer');
+
+// 가상 아이템 데이터 (실제로는 API에서 가져오겠죠)
+const allItems = {
+    type1: Array.from({ length: 20 }, (_, i) => `아이템 타입 1-${i + 1}`),
+    type2: Array.from({ length: 20 }, (_, i) => `아이템 타입 2-${i + 1}`),
+    type3: Array.from({ length: 20 }, (_, i) => `아이템 타입 3-${i + 1}`),
+    type4: Array.from({ length: 20 }, (_, i) => `아이템 타입 4-${i + 1}`),
+};
+
+// 검색 버튼 클릭 시 발생하는 이벤트
+searchButton.addEventListener('click', () => {
+    const searchTerm = searchInput.value;
+    if (searchTerm) {
+        siteTitle.textContent = searchTerm; // 제목을 검색어로 변경
+        alert(`"${searchTerm}"(으)로 검색`); // 검색 기능은 아직 없으므로 알림으로 대체
+    }
+});
+
+// 아이템 타입 버튼 클릭 시 발생하는 이벤트
+itemTypeButtons.addEventListener('click', (event) => {
+    const clickedButton = event.target;
+    if (clickedButton.tagName === 'BUTTON') {
+        const itemType = clickedButton.dataset.type;
+        const items = allItems[itemType];
+
+        // 결과창 비우기
+        resultsContainer.innerHTML = '';
+
+        // 새로운 아이템 목록 표시
+        items.forEach(item => {
+            const itemCard = document.createElement('div');
+            itemCard.classList.add('item-card');
+            itemCard.textContent = item;
+            resultsContainer.appendChild(itemCard);
+        });
+    }
+});
