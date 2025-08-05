@@ -101,8 +101,6 @@ const allItems = {
 searchButton.addEventListener('click', () => {
     const searchTerm = searchInput.value;
     if (searchTerm) {
-        searchResultDisplay.textContent = searchTerm; // 빈 공간에 검색어를 표시
-        
         // 검색 로직
         // 모든 아이템 목록을 하나의 배열로 합칩니다.
         const allItemsList = [].concat(...Object.values(allItems));
@@ -114,6 +112,9 @@ searchButton.addEventListener('click', () => {
         
         // 검색된 아이템 목록 표시
         if (filteredItems.length > 0) {
+            // 검색된 첫 번째 아이템의 설명을 빈 공간에 표시합니다.
+            searchResultDisplay.textContent = filteredItems[0].description;
+            
             filteredItems.forEach(item => {
                 const itemCard = document.createElement('div');
                 itemCard.classList.add('item-card');
@@ -128,6 +129,7 @@ searchButton.addEventListener('click', () => {
             });
         } else {
             // 검색 결과가 없을 경우
+            searchResultDisplay.textContent = '검색 결과가 없습니다.';
             resultsContainer.innerHTML = '<p style="text-align:center; padding:20px;">검색 결과가 없습니다.</p>';
         }
     }
@@ -142,6 +144,7 @@ itemTypeButtons.addEventListener('click', (event) => {
 
         // 결과창 비우기
         resultsContainer.innerHTML = '';
+        searchResultDisplay.textContent = ''; // 아이템 타입 버튼 클릭 시 빈칸 비우기
 
         // 새로운 아이템 목록 표시
         items.forEach(item => {
