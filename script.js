@@ -1,11 +1,11 @@
 // HTML 요소들을 변수로 가져옵니다.
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
-const searchResultDisplay = document.getElementById('searchResultDisplay'); // 새로 추가된 요소
+const searchResultDisplay = document.getElementById('searchResultDisplay'); // 검색 결과를 표시할 빈 공간
 const itemTypeButtons = document.getElementById('itemTypeButtons');
 const resultsContainer = document.getElementById('resultsContainer');
 
-// 가상 아이템 데이터 (실제로는 API에서 가져오겠죠)
+// ... (나머지 코드는 동일)
 const allItems = {
     type1: Array.from({ length: 20 }, (_, i) => `아이템 타입 1-${i + 1}`),
     type2: Array.from({ length: 20 }, (_, i) => `아이템 타입 2-${i + 1}`),
