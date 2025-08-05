@@ -10,6 +10,7 @@
         .search-box { display: flex; }
         .search-box input[type="text"] { border: 1px solid #ccc; padding: 5px; }
         .search-box button { background-color: #333; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+        .search-result-display { margin: 20px 0; padding: 20px; border: 1px dashed #999; text-align: center; font-size: 1.5em; min-height: 50px; }
         .item-types { display: flex; margin-top: 20px; }
         .item-types button { flex: 1; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0; cursor: pointer; }
         .results-container { margin-top: 20px; border: 1px solid #ccc; padding: 10px; min-height: 200px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
@@ -24,6 +25,10 @@
             <input type="text" id="searchInput" placeholder="검색">
             <button id="searchButton">검색</button>
         </div>
+    </div>
+
+    <div id="searchResultDisplay" class="search-result-display">
+        여기에 검색 결과가 표시됩니다.
     </div>
 
     <div class="item-types" id="itemTypeButtons">
