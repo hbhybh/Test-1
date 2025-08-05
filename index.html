@@ -11,20 +11,36 @@
         .search-box input[type="text"] { border: 1px solid #ccc; padding: 5px; }
         .search-box button { background-color: #333; color: white; border: none; padding: 5px 10px; cursor: pointer; }
         
-        /* 이 부분을 수정했습니다. */
         .search-result-display { 
             margin: 20px 0; 
-            padding: 50px; /* padding 값을 늘려 빈 공간의 높이를 키웁니다. */
+            padding: 50px; 
             border: 1px dashed #999; 
             text-align: center; 
             font-size: 1.5em; 
-            min-height: 100px; /* 최소 높이를 설정하여 항상 공간이 확보되게 합니다. */
+            min-height: 100px;
         }
         
         .item-types { display: flex; margin-top: 20px; }
         .item-types button { flex: 1; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0; cursor: pointer; }
-        .results-container { margin-top: 20px; border: 1px solid #ccc; padding: 10px; min-height: 200px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-        .item-card { border: 1px solid #eee; padding: 10px; text-align: center; }
+        .results-container { 
+            margin-top: 20px; 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            min-height: 200px; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+            gap: 10px; 
+        }
+        .item-card { 
+            border: 1px solid #eee; 
+            padding: 10px; 
+            text-align: center; 
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .item-card:hover {
+            background-color: #f0f0f0;
+        }
     </style>
 </head>
 <body>
